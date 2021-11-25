@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container-fluid px-1 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                <h3>Analyse de donnée</h3>
+
+                <div class="card">
+                    <h5 class="text-center mb-4"></h5>
+                    <form class="form-card" >
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3">AGE<span class="text-danger"> *</span></label>
+                                <input type="text" id="age" name="age">
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3">SEXE<span class="text-danger"> *</span></label>
+                                <select id="sexe" name="sexe">
+                                    <option value="">--Please choose an option--</option>
+                                    <option value="0">Homme</option>
+                                    <option value="1">Femme</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3">TDT<span class="text-danger"> *</span></label>
+                                <select id="tdt" name="tdt">
+                                    <option value="">--Please choose an option--</option>
+                                    <option value="AA">AA</option>
+                                    <option value="ASY">ASY</option>
+                                    <option value="DNA">DNA</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3">PAR<span class="text-danger"> *</span></label>
+                                <input type="text" id="par" name="par">
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3">CHOLESTEROL<span class="text-danger"> *</span></label>
+                                <input type="number" id="chol" name="chol">
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3">GAI<span class="text-danger"> *</span></label>
+                                <input type="text" id="gai" name="gai">
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3">ECG<span class="text-danger"> *</span></label>
+                                <select id="ecg" name="ecg">
+                                    <option value="">--Please choose an option--</option>
+                                    <option value="Normal">Normal</option>
+                                    <option value="ST">ST</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3">FCMAX<span class="text-danger"> *</span></label>
+                                <input type="text" id="fcmax" name="fcmax">
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3">ANGINE<span class="text-danger"> *</span></label>
+                                <select id="angine" name="angine">
+                                    <option value="">--Please choose an option--</option>
+                                    <option value=0>NOM</option>
+                                    <option value=1>OUI</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3">DEPRESSION<span class="text-danger"> *</span></label>
+                                <select id="depres" name="depres">
+                                    <option value="">--Please choose an option--</option>
+                                    <option value=0>0</option>
+                                    <option value=1>1</option>
+                                    <option value=1.5>1.5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex">
+                                <label class="form-control-label px-3">PENTE<span class="text-danger"> *</span></label>
+                                <select id="pente" name="pente">
+                                    <option value="">--Please choose an option--</option>
+                                    <option value="Ascendant">Ascendant</option>
+                                    <option value="Plat">Plat</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="form-group col-sm-6">
+                                <button type="submit" class="btn-block btn-primary">Predition</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div style="width: 500px; height: 200px; border:1px solid green; margin:auto; background-color:#fcfcfc">
+            {% block content %}
+                <span class="badge badge-primary">{{ post['created'] }}</span>
+                <p>{{ post['content'] }}</p>
+            {% endblock %}
+        </div>
+    </div>
+
+</body>
+</html>
