@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -17,7 +17,7 @@
 
                 <div class="card">
                     <h5 class="text-center mb-4"></h5>
-                    <form class="form-card" >
+                    <form class="form-card" action="{{url_for('after')}}" method="post">
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label class="form-control-label px-3">AGE<span class="text-danger"> *</span></label>
@@ -27,8 +27,8 @@
                                 <label class="form-control-label px-3">SEXE<span class="text-danger"> *</span></label>
                                 <select id="sexe" name="sexe">
                                     <option value="">--Please choose an option--</option>
-                                    <option value="0">Homme</option>
-                                    <option value="1">Femme</option>
+                                    <option value=1>Homme</option>
+                                    <option value=0>Femme</option>
                                 </select>
                             </div>
                         </div>
@@ -37,9 +37,10 @@
                                 <label class="form-control-label px-3">TDT<span class="text-danger"> *</span></label>
                                 <select id="tdt" name="tdt">
                                     <option value="">--Please choose an option--</option>
-                                    <option value="AA">AA</option>
-                                    <option value="ASY">ASY</option>
-                                    <option value="DNA">DNA</option>
+                                    <option value=0>AA</option>
+                                    <option value=1>ASY</option>
+                                    <option value=2>AT</option>
+                                    <option value=3>DNA</option>
                                 </select>
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
@@ -50,11 +51,11 @@
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label class="form-control-label px-3">CHOLESTEROL<span class="text-danger"> *</span></label>
-                                <input type="number" id="chol" name="chol">
+                                <input type="text" id="chol" name="chol">
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label class="form-control-label px-3">GAI<span class="text-danger"> *</span></label>
-                                <input type="text" id="gai" name="gai">
+                                <input type="number" id="gai" name="gai">
                             </div>
                         </div>
                         <div class="row justify-content-between text-left">
@@ -62,8 +63,9 @@
                                 <label class="form-control-label px-3">ECG<span class="text-danger"> *</span></label>
                                 <select id="ecg" name="ecg">
                                     <option value="">--Please choose an option--</option>
-                                    <option value="Normal">Normal</option>
-                                    <option value="ST">ST</option>
+                                    <option value=0>LVH</option>
+                                    <option value=1>Normal</option>
+                                    <option value=2>ST</option>
                                 </select>
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
@@ -76,7 +78,7 @@
                                 <label class="form-control-label px-3">ANGINE<span class="text-danger"> *</span></label>
                                 <select id="angine" name="angine">
                                     <option value="">--Please choose an option--</option>
-                                    <option value=0>NOM</option>
+                                    <option value=0>NON</option>
                                     <option value=1>OUI</option>
                                 </select>
                             </div>
@@ -95,14 +97,15 @@
                                 <label class="form-control-label px-3">PENTE<span class="text-danger"> *</span></label>
                                 <select id="pente" name="pente">
                                     <option value="">--Please choose an option--</option>
-                                    <option value="Ascendant">Ascendant</option>
-                                    <option value="Plat">Plat</option>
+                                    <option value=0>Ascendant</option>
+                                    <option value=1>Descendant</option>
+                                    <option value=2>Plat</option>
                                 </select>
                             </div>
                         </div>
                         <div class="row justify-content-center">
                             <div class="form-group col-sm-6">
-                                <button type="submit" class="btn-block btn-primary">Predition</button>
+                                <button type="submit" class="btn-block btn-primary" value="predict">Predition</button>
                             </div>
                         </div>
 
@@ -111,10 +114,7 @@
             </div>
         </div>
         <div style="width: 500px; height: 200px; border:1px solid green; margin:auto; background-color:#fcfcfc">
-            {% block content %}
-                <span class="badge badge-primary">{{ post['created'] }}</span>
-                <p>{{ post['content'] }}</p>
-            {% endblock %}
+
         </div>
     </div>
 

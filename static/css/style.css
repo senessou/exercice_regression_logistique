@@ -63,8 +63,3 @@ button:focus {
     box-shadow: none !important;
     outline-width: 0
 }
-#result {
-    width: 200px;
-    height 200px;
-    border: 1px solid block;
-}
