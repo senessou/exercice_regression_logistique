@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <!--<link rel="stylesheet" href="/static/css/style.css">-->
     <title>Title</title>
 </head>
 <body>
-<div style="width: 500px; height: 200px; border:1px solid green; margin:auto; background-color:#fcfcfc">
-    {% if data == 0 %}
-        <p class="text-center">Vous etes pas malade</p>
-    {% else %}
-        <p class="text-center">vous etes malade</p>
-    {% endif %}
-</div>
+{% block content %}
+
+{% endblock  %}
 </body>
 </html>
